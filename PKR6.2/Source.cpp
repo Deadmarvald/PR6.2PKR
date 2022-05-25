@@ -1,6 +1,5 @@
 #include <iostream>
 #include <Windows.h>
-#define NULL 0
 
 using namespace std;
 
@@ -32,7 +31,7 @@ void print(Elem* first)
     }
 }
 
-void dequque(Elem*& first, Elem*& last)
+void dequeue(Elem*& first, Elem*& last)
 {
     while (first != NULL)
     {
@@ -69,11 +68,13 @@ int main()
     Elem* first = NULL,
         * last = NULL;
 
-    int value;
+    int N, value;
 
-    for (int i = 1; i < 10; i++)
+    cout << "¬вед≥ть к≥льк≥сть елемент≥в: "; cin >> N;
+
+    for (int i = 0; i < N; i++)
     {
-        cout << "Enter value of " << i << " element: "; cin >> value;
+        cout << "¬вед≥ть значенн€ " << i + 1 << " елементу: "; cin >> value;
         enqueue(first, last, value);
     }
     cout << endl;
@@ -91,7 +92,7 @@ int main()
              << "з однаковим значенн€м ≥нформац≥йного пол€" << endl << endl;
     }
 
-    dequque(first, last);
+    dequeue(first, last);
 
     system("pause");
     return 0;
